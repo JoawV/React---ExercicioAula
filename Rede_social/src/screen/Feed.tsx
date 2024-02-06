@@ -1,8 +1,20 @@
 import { View, StyleSheet, FlatList, SafeAreaView } from "react-native";
 import Header from "../components/Header";
 import { FC } from "react";
+import Social from "../components/Social";
+import Body from "../components/Body";
 
-const Feed = FC<Props> = ({
+interface Props {
+    avatar: string;
+    username: string;
+    text: string;
+    image: string;
+    comments: number;
+    reposts: number;
+    likes: number;
+}
+
+const Feed: FC<Props> = ({
     avatar,
     username,
     text,
@@ -14,6 +26,8 @@ const Feed = FC<Props> = ({
     return (
         <View style={styles.container}>
             <Header avatar={avatar} username={username} />
+            <Body text={text} image={image} />
+            <Social comments={comments} reposts={reposts} likes={likes}/>
         </View>
     )
 }

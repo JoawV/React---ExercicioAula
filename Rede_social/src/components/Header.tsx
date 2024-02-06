@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { Text, View, StyleSheet } from "react-native";
+import { Text, View, StyleSheet, Image } from "react-native";
 
 interface Props {
     avatar: string;
@@ -8,23 +8,35 @@ interface Props {
 
 const Header: FC<Props> = ({ avatar, username }) => {
     return (
-        <View>
-            <Text style={styles.text}>{avatar}</Text>
-            <Text style={styles.bodyText}>{username}</Text>
+        <View style={styles.container}>
+            <View style={styles.header}>
+                <Image style={styles.avatar} source={{ uri: avatar }} />
+                <Text style={styles.username}>{username}</Text>
+            </View>
         </View>
     );
 };
 
 const styles = StyleSheet.create({
-    text: {
-        fontSize: 25,
-    },
-    bodyText: {
-        fontSize: 20,
-    },
     container: {
-        marginVertical: 10,
+        flex: 1,
+        justifyContent: "center",
+        alignItems: "center",
     },
-});
+    header: {
+        flexDirection: "row",
+        alignItems: "center",
+    },
+    avatar: {
+        width: 50,
+        height: 50,
+        borderRadius: 25,
+        marginRight: 10,
+    },
+    username: {
+        fontSize: 20,
+        fontWeight: "bold",
+    },
+})
 
 export default Header;

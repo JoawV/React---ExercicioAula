@@ -2,9 +2,9 @@ import { FC } from "react";
 import { Text, View, StyleSheet } from "react-native";
 
 interface Props {
-    comments: string;
-    reposts: string;
-    likes: string;
+    comments: number;
+    reposts: number;
+    likes: number;
 }
 
 const Social: FC<Props> = ({ comments, reposts, likes }) => {
