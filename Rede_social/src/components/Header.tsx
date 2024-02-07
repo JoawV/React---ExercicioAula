@@ -19,13 +19,13 @@ const Header: FC<Props> = ({ avatar, username }) => {
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
+        width: "100%",
+        paddingHorizontal: 20,
+        paddingTop: 10,
     },
     header: {
         flexDirection: "row",
-        alignItems: "center",
+        alignItems: "flex-start",
     },
     avatar: {
         width: 50,
